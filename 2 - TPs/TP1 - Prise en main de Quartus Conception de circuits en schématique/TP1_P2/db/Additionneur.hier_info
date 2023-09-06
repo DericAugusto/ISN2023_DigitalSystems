@@ -1,0 +1,61 @@
+|Full_add_4bit
+LEDR[0] <= Full_add_1bit:inst.S
+LEDR[1] <= Full_add_1bit:inst1.S
+LEDR[2] <= Full_add_1bit:inst2.S
+LEDR[3] <= Full_add_1bit:inst3.S
+LEDR[4] <= Full_add_1bit:inst3.COUT
+SW[0] => Full_add_1bit:inst.A
+SW[1] => Full_add_1bit:inst1.A
+SW[2] => Full_add_1bit:inst2.A
+SW[3] => Full_add_1bit:inst3.A
+SW[4] => Full_add_1bit:inst.B
+SW[5] => Full_add_1bit:inst1.B
+SW[6] => Full_add_1bit:inst2.B
+SW[7] => Full_add_1bit:inst3.B
+SW[8] => Full_add_1bit:inst.CIN
+
+
+|Full_add_4bit|Full_add_1bit:inst3
+S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+B => inst.IN1
+B => inst3.IN1
+CIN => inst1.IN1
+CIN => inst2.IN1
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_add_4bit|Full_add_1bit:inst2
+S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+B => inst.IN1
+B => inst3.IN1
+CIN => inst1.IN1
+CIN => inst2.IN1
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_add_4bit|Full_add_1bit:inst1
+S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+B => inst.IN1
+B => inst3.IN1
+CIN => inst1.IN1
+CIN => inst2.IN1
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Full_add_4bit|Full_add_1bit:inst
+S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+B => inst.IN1
+B => inst3.IN1
+CIN => inst1.IN1
+CIN => inst2.IN1
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+

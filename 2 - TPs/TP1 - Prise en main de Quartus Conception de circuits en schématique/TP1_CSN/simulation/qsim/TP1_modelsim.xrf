@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, O:/TP1_CSN/TP1.bdf
+source_file = 1, O:/TP1_CSN/Waveform.vwf
+source_file = 1, O:/TP1_CSN/output_files/Chain2.cdf
+source_file = 1, O:/TP1_CSN/db/TP1.cbx.xml
+design_name = TP1
+instance = comp, \sortie~output , sortie~output, TP1, 1
+instance = comp, \x1~input , x1~input, TP1, 1
+instance = comp, \x2~input , x2~input, TP1, 1
+instance = comp, \inst3~0 , inst3~0, TP1, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, TP1, 1

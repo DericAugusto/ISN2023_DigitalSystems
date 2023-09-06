@@ -1,0 +1,8 @@
+|TP1
+sortie <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+x1 => inst4.IN0
+x1 => inst1.IN0
+x2 => inst2.IN1
+x2 => inst5.IN0
+
+

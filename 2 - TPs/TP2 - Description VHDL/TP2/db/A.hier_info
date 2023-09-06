@@ -1,0 +1,90 @@
+|additionneur_4bitsbdf
+LEDR[0] <= full_add4bit_comp:inst.s[0]
+LEDR[1] <= full_add4bit_comp:inst.s[1]
+LEDR[2] <= full_add4bit_comp:inst.s[2]
+LEDR[3] <= full_add4bit_comp:inst.s[3]
+LEDR[4] <= full_add4bit_comp:inst.cout
+SW[0] => full_add4bit_comp:inst.a[0]
+SW[1] => full_add4bit_comp:inst.a[1]
+SW[2] => full_add4bit_comp:inst.a[2]
+SW[3] => full_add4bit_comp:inst.a[3]
+SW[4] => full_add4bit_comp:inst.b[0]
+SW[5] => full_add4bit_comp:inst.b[1]
+SW[6] => full_add4bit_comp:inst.b[2]
+SW[7] => full_add4bit_comp:inst.b[3]
+SW[8] => full_add4bit_comp:inst.cin
+
+
+|additionneur_4bitsbdf|full_add4bit_comp:inst
+a[0] => full_add1bit:INST1.a
+a[1] => full_add1bit:INST2.a
+a[2] => full_add1bit:INST3.a
+a[3] => full_add1bit:INST4.a
+b[0] => full_add1bit:INST1.b
+b[1] => full_add1bit:INST2.b
+b[2] => full_add1bit:INST3.b
+b[3] => full_add1bit:INST4.b
+cin => full_add1bit:INST1.cin
+s[0] <= full_add1bit:INST1.s
+s[1] <= full_add1bit:INST2.s
+s[2] <= full_add1bit:INST3.s
+s[3] <= full_add1bit:INST4.s
+cout <= full_add1bit:INST4.cout
+
+
+|additionneur_4bitsbdf|full_add4bit_comp:inst|full_add1bit:INST1
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN0
+b => cout.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|additionneur_4bitsbdf|full_add4bit_comp:inst|full_add1bit:INST2
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN0
+b => cout.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|additionneur_4bitsbdf|full_add4bit_comp:inst|full_add1bit:INST3
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN0
+b => cout.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|additionneur_4bitsbdf|full_add4bit_comp:inst|full_add1bit:INST4
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN0
+b => cout.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

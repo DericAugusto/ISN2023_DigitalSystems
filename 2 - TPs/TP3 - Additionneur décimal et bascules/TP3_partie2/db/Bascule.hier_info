@@ -1,0 +1,9 @@
+|Block3
+Q2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+set2 => inst1.PRESET
+rest2 => inst1.ACLR
+K => inst1.IN0
+J => inst1.IN1
+clc => inst1.CLK
+
+

@@ -1,0 +1,11 @@
+entity full_add1bit is
+port(
+a, b, cin: in bit;
+s, cout: out bit --ici pas de virgule
+);
+end entity;
+Architecture arch of full_add1bit is
+begin
+s<=cin xor (a xor b);
+cout<=(cin and a) or (cin and b) or (a and b); 
+end arch;

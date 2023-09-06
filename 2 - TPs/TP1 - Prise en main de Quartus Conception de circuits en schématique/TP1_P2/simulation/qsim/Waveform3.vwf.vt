@@ -1,0 +1,358 @@
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus II License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/06/2023 12:03:51"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    Full_add_4bit
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Full_add_4bit_vlg_sample_tst(
+	SW,
+	sampler_tx
+);
+input [8:0] SW;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(SW)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+    if ($realtime == 0 || $realtime != current_time)  
+    begin                                             
+        if (sample === 1'bx)                          
+            sample = 0;                               
+        else                                          
+            sample = ~sample;                         
+    end                                               
+    current_time = $realtime;                         
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module Full_add_4bit_vlg_check_tst (
+	LDER,
+	LEDR,
+	sampler_rx
+);
+input [3:0] LDER;
+input [4:4] LEDR;
+input sampler_rx;
+
+reg [3:0] LDER_expected;
+reg [4:4] LEDR_expected;
+
+reg [3:0] LDER_prev;
+reg [4:4] LEDR_prev;
+
+reg [3:0] LDER_expected_prev;
+reg [4:4] LEDR_expected_prev;
+
+reg [3:0] last_LDER_exp;
+reg [4:4] last_LEDR_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	LDER_prev = LDER;
+	LEDR_prev = LEDR;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	LDER_expected_prev = LDER_expected;
+	LEDR_expected_prev = LEDR_expected;
+end
+
+
+
+// expected LDER[3]
+initial
+begin
+	LDER_expected[3] = 1'bX;
+end 
+
+// expected LDER[2]
+initial
+begin
+	LDER_expected[2] = 1'bX;
+end 
+
+// expected LDER[1]
+initial
+begin
+	LDER_expected[1] = 1'bX;
+end 
+
+// expected LDER[0]
+initial
+begin
+	LDER_expected[0] = 1'bX;
+end 
+
+// expected LEDR[4]
+initial
+begin
+	LEDR_expected[4] = 1'bX;
+end 
+// generate trigger
+always @(LDER_expected or LDER or LEDR_expected or LEDR)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected LDER = %b | expected LEDR = %b | ",LDER_expected_prev,LEDR_expected_prev);
+	$display("| real LDER = %b | real LEDR = %b | ",LDER_prev,LEDR_prev);
+`endif
+	if (
+		( LDER_expected_prev[0] !== 1'bx ) && ( LDER_prev[0] !== LDER_expected_prev[0] )
+		&& ((LDER_expected_prev[0] !== last_LDER_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LDER[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LDER_expected_prev);
+		$display ("     Real value = %b", LDER_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_LDER_exp[0] = LDER_expected_prev[0];
+	end
+	if (
+		( LDER_expected_prev[1] !== 1'bx ) && ( LDER_prev[1] !== LDER_expected_prev[1] )
+		&& ((LDER_expected_prev[1] !== last_LDER_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LDER[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LDER_expected_prev);
+		$display ("     Real value = %b", LDER_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_LDER_exp[1] = LDER_expected_prev[1];
+	end
+	if (
+		( LDER_expected_prev[2] !== 1'bx ) && ( LDER_prev[2] !== LDER_expected_prev[2] )
+		&& ((LDER_expected_prev[2] !== last_LDER_exp[2]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LDER[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LDER_expected_prev);
+		$display ("     Real value = %b", LDER_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_LDER_exp[2] = LDER_expected_prev[2];
+	end
+	if (
+		( LDER_expected_prev[3] !== 1'bx ) && ( LDER_prev[3] !== LDER_expected_prev[3] )
+		&& ((LDER_expected_prev[3] !== last_LDER_exp[3]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LDER[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LDER_expected_prev);
+		$display ("     Real value = %b", LDER_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_LDER_exp[3] = LDER_expected_prev[3];
+	end
+	if (
+		( LEDR_expected_prev !== 1'bx ) && ( LEDR_prev !== LEDR_expected_prev )
+		&& ((LEDR_expected_prev !== last_LEDR_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LEDR :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_LEDR_exp = LEDR_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module Full_add_4bit_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [8:0] SW;
+// wires                                               
+wire [3:0] LDER;
+wire [4:4] LEDR;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+Full_add_4bit i1 (
+// port map - connection between master ports and signals/registers   
+	.LDER(LDER),
+	.LEDR(LEDR),
+	.SW(SW)
+);
+
+// SW[3]
+always
+begin
+	SW[3] = 1'b0;
+	SW[3] = #20000 1'b1;
+	#20000;
+end 
+
+// SW[2]
+initial
+begin
+	repeat(12)
+	begin
+		SW[2] = 1'b0;
+		SW[2] = #40000 1'b1;
+		# 40000;
+	end
+	SW[2] = 1'b0;
+end 
+
+// SW[1]
+initial
+begin
+	repeat(6)
+	begin
+		SW[1] = 1'b0;
+		SW[1] = #80000 1'b1;
+		# 80000;
+	end
+	SW[1] = 1'b0;
+end 
+
+// SW[0]
+initial
+begin
+	repeat(3)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #160000 1'b1;
+		# 160000;
+	end
+	SW[0] = 1'b0;
+end 
+
+// SW[7]
+initial
+begin
+	repeat(6)
+	begin
+		SW[7] = 1'b0;
+		SW[7] = #80000 1'b1;
+		# 80000;
+	end
+	SW[7] = 1'b0;
+end 
+
+// SW[6]
+initial
+begin
+	repeat(3)
+	begin
+		SW[6] = 1'b0;
+		SW[6] = #160000 1'b1;
+		# 160000;
+	end
+	SW[6] = 1'b0;
+end 
+
+// SW[5]
+initial
+begin
+	SW[5] = 1'b0;
+	SW[5] = #320000 1'b1;
+	SW[5] = #320000 1'b0;
+	SW[5] = #320000 1'b1;
+end 
+
+// SW[4]
+initial
+begin
+	SW[4] = 1'b0;
+	SW[4] = #640000 1'b1;
+end 
+
+// SW[8]
+initial
+begin
+	SW[8] = 1'b0;
+	SW[8] = #700000 1'b1;
+	SW[8] = #260000 1'b0;
+end 
+
+Full_add_4bit_vlg_sample_tst tb_sample (
+	.SW(SW),
+	.sampler_tx(sampler)
+);
+
+Full_add_4bit_vlg_check_tst tb_out(
+	.LDER(LDER),
+	.LEDR(LEDR),
+	.sampler_rx(sampler)
+);
+endmodule
+

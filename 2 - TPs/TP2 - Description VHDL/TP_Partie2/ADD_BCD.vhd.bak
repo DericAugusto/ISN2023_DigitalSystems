@@ -1,0 +1,37 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity ADD_BCD is
+port(
+A, B : IN std_logic_vector(3 downto 0);
+Cin : IN std_logic;
+S : OUT std_logic_vector(3 downto 0);
+Cout : OUT std_logic_vector(3 downto 0)
+ );
+END ADD_BCD;
+Architecture arch of ADD_BCD is
+signal resultat: std_logic_vector(4 downto 0);
+begin
+
+Process (A,B,Cin)
+begin
+resultat <= ('0' & A)+ B +Cin;
+s <= resultat(3 downto 0);
+cout <= resultat(4); 
+
+IF (10<=s<=19) then
+s <= s + 6;
+End if;
+
+IF (20<=s<=29) then
+s <= s + 12;
+End if;
+
+IF (30<=s<=31) then
+s <= s + 18;
+End if;
+
+
+end Process;
+end arch;

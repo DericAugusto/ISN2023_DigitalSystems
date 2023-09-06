@@ -1,0 +1,70 @@
+$comment
+	File created using the following command:
+		vcd file TP1.msim.vcd -direction
+$end
+$date
+	Mon Mar 06 09:47:28 2023
+$end
+$version
+	ModelSim Version 10.3d
+$end
+$timescale
+	1ps
+$end
+
+$scope module TP1_vlg_vec_tst $end
+$var reg 1 ! x1 $end
+$var reg 1 " x2 $end
+$var wire 1 # sortie $end
+$var wire 1 $ sampler $end
+
+$scope module i1 $end
+$var wire 1 % gnd $end
+$var wire 1 & vcc $end
+$var wire 1 ' unknown $end
+$var tri1 1 ( devclrn $end
+$var tri1 1 ) devpor $end
+$var tri1 1 * devoe $end
+$var wire 1 + ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 , x1~input_o $end
+$var wire 1 - x2~input_o $end
+$var wire 1 . inst3~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+x$
+0%
+1&
+x'
+1(
+1)
+1*
+0+
+0,
+0-
+0.
+$end
+#50000
+1"
+1-
+0$
+1.
+1#
+#100000
+1!
+0"
+1,
+0-
+1$
+#150000
+1"
+1-
+0$
+0.
+0#
+#200000
